@@ -6,17 +6,14 @@ class Goroon < Formula
   version @@version
 
   if Hardware::CPU.is_64_bit?
-    @@binname = 'goroon-darwin64'
-    url "https://github.com/tzmfreedom/goroon/releases/download/v#{@@version}/#{@@binname}"
-    sha256 '2ac1b4da1ae01bcdd5915e067c06de1f71c6205f052a1641cd74af6aaa2eda8e'
+    url "https://github.com/tzmfreedom/goroon/releases/download/v#{@@version}/goroon-#{@@version}-darwin-amd64.tar.gz"
+    sha256 'b0ce37342eaf7d0f0bc3c65f8d84160d72f055a6d8ce4b62a4c56a7945e55301'
   else
-    @@binname = 'goroon-darwin386'
-    url "https://github.com/tzmfreedom/goroon/releases/download/v#{@@version}/#{@@binname}"
-    sha256 '0059b5e4cd06f1ad17e08f9ebb6c5fb223f56b26c75f44c98193e91af03bb33b'
+    url "https://github.com/tzmfreedom/goroon/releases/download/v#{@@version}/goroon-#{@@version}-darwin-386.tar.gz"
+    sha256 'a87215244d4dfc6f8866b683ecd85554a3fc5722483b8172213f63196f332138'
   end
 
   def install
-    mv @@binname, 'goroon'
     bin.install 'goroon'
   end
 
@@ -24,4 +21,5 @@ class Goroon < Formula
     system "false"
   end
 end
+
 
